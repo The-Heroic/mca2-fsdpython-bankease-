@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import apiClient from '../api/client'
+import DashboardOverviewSection from './DashboardOverviewSection'
 import AccountsSection from './AccountsSection'
 import TransfersSection from './TransfersSection'
 import BillsSection from './BillsSection'
 import LoansSection from './LoansSection'
 import InvestmentsSection from './InvestmentsSection'
+import SupportSection from './SupportSection'
+import SecurityNotificationsSection from './SecurityNotificationsSection'
 import ProfileSecuritySection from './ProfileSecuritySection'
 
 const MODULES = [
@@ -14,14 +17,15 @@ const MODULES = [
   { id: 4, name: 'Bill Payment', sprint: 'Sprint 2', status: 'Active' },
   { id: 5, name: 'Loan Management', sprint: 'Sprint 2', status: 'Active' },
   { id: 6, name: 'Investment Services', sprint: 'Sprint 2', status: 'Active' },
-  { id: 7, name: 'Customer Support', sprint: 'Sprint 3', status: 'Planned' },
-  { id: 8, name: 'Security & Compliance', sprint: 'Sprint 3', status: 'Planned' },
-  { id: 9, name: 'Notification & Alerts', sprint: 'Sprint 3', status: 'Planned' },
-  { id: 10, name: 'Dashboard & Reporting', sprint: 'Sprint 3', status: 'Planned' },
+  { id: 7, name: 'Customer Support', sprint: 'Sprint 3', status: 'Active' },
+  { id: 8, name: 'Security & Compliance', sprint: 'Sprint 3', status: 'Active' },
+  { id: 9, name: 'Notification & Alerts', sprint: 'Sprint 3', status: 'Active' },
+  { id: 10, name: 'Dashboard & Reporting', sprint: 'Sprint 3', status: 'Active' },
 ]
 
 export default function DashboardShell({ user, onLogout }) {
-  const [activeTab, setActiveTab] = useState('accounts')
+  const [activeTab, setActiveTab] = useState('dashboard')
+  const [unreadCount, setUnreadCount] = useState(0)
 
   const handleLogout = async () => {
     const refresh = localStorage.getItem('bankease_refresh_token')
@@ -59,6 +63,14 @@ export default function DashboardShell({ user, onLogout }) {
       <div className="bg-white border-bottom">
         <div className="container">
           <ul className="nav nav-pills py-2 gap-2 flex-wrap">
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'dashboard' ? 'active' : ''}`}
+                onClick={() => setActiveTab('dashboard')}
+              >
+                Dashboard
+              </button>
+            </li>
             <li className="nav-item">
               <button
                 className={`nav-link btn-sm ${activeTab === 'accounts' ? 'active' : ''}`}
@@ -101,6 +113,22 @@ export default function DashboardShell({ user, onLogout }) {
             </li>
             <li className="nav-item">
               <button
+                className={`nav-link btn-sm ${activeTab === 'support' ? 'active' : ''}`}
+                onClick={() => setActiveTab('support')}
+              >
+                Support
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'security' ? 'active' : ''}`}
+                onClick={() => setActiveTab('security')}
+              >
+                Alerts &amp; KYC {unreadCount > 0 && <span className="badge bg-danger ms-1">{unreadCount}</span>}
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
                 className={`nav-link btn-sm ${activeTab === 'profile' ? 'active' : ''}`}
                 onClick={() => setActiveTab('profile')}
               >
@@ -112,7 +140,7 @@ export default function DashboardShell({ user, onLogout }) {
                 className={`nav-link btn-sm ${activeTab === 'roadmap' ? 'active' : ''}`}
                 onClick={() => setActiveTab('roadmap')}
               >
-                Roadmap
+                Modules
               </button>
             </li>
           </ul>
@@ -120,11 +148,16 @@ export default function DashboardShell({ user, onLogout }) {
       </div>
 
       <main className="container py-4 flex-grow-1">
+        {activeTab === 'dashboard' && <DashboardOverviewSection user={user} />}
         {activeTab === 'accounts' && <AccountsSection user={user} />}
         {activeTab === 'transfers' && <TransfersSection />}
         {activeTab === 'bills' && <BillsSection />}
         {activeTab === 'loans' && <LoansSection user={user} />}
         {activeTab === 'investments' && <InvestmentsSection />}
+        {activeTab === 'support' && <SupportSection user={user} />}
+        {activeTab === 'security' && (
+          <SecurityNotificationsSection user={user} onUnreadChange={setUnreadCount} />
+        )}
         {activeTab === 'profile' && <ProfileSecuritySection user={user} />}
         {activeTab === 'roadmap' && (
           <div className="row g-3">
@@ -136,18 +169,10 @@ export default function DashboardShell({ user, onLogout }) {
                       <span className="badge bg-primary-subtle text-primary">
                         Module {mod.id}
                       </span>
-                      <span
-                        className={`badge ${
-                          mod.status === 'Active'
-                            ? 'bg-success'
-                            : 'bg-secondary-subtle text-secondary'
-                        }`}
-                      >
-                        {mod.status}
-                      </span>
+                      <span className="badge bg-success">{mod.status}</span>
                     </div>
                     <h6 className="fw-bold mb-1">{mod.name}</h6>
-                    <div className="text-muted small">Scheduled: {mod.sprint}</div>
+                    <div className="text-muted small">Delivered: {mod.sprint}</div>
                   </div>
                 </div>
               </div>
