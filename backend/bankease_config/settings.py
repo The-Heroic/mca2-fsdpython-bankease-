@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'apps.accounts_auth',
     'apps.banking_accounts',
     'apps.transfers',
+    'apps.bills',
+    'apps.loans',
+    'apps.investments',
 ]
 
 MIDDLEWARE = [
