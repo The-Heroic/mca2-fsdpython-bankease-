@@ -1,0 +1,13 @@
+biller_id,biller_code,biller_name,category,coverage_state,is_active,created_at
+1,UPPCL_NR,Uttar Pradesh Power Corporation Ltd (UPPCL),ELECTRICITY,Uttar Pradesh,1,2024-01-03 10:00:00
+2,BSES_RAJ,BSES Rajdhani Power Ltd,ELECTRICITY,Delhi,1,2024-01-03 10:05:00
+3,BESCOM_KA,Bangalore Electricity Supply Company (BESCOM),ELECTRICITY,Karnataka,1,2024-01-03 10:10:00
+4,MAHADISCOM,Mahavitaran - Maharashtra State Electricity (MSEDCL),ELECTRICITY,Maharashtra,1,2024-01-03 10:15:00
+5,DJB_WATER,Delhi Jal Board (DJB),WATER,Delhi,1,2024-01-03 10:20:00
+6,BWSSB_WATER,Bangalore Water Supply and Sewerage Board,WATER,Karnataka,1,2024-01-03 10:25:00
+7,IGL_PNG,Indraprastha Gas Limited (IGL PNG),PIPED_GAS,Delhi NCR,1,2024-01-03 10:30:00
+8,JIO_FIBER,JioFiber Postpaid Broadband,BROADBAND,PAN_INDIA,1,2024-01-03 10:35:00
+9,AIRTEL_BB,Airtel Xstream Fiber Broadband,BROADBAND,PAN_INDIA,1,2024-01-03 10:40:00
+10,TATA_PLAY,Tata Play DTH Recharge,DTH,PAN_INDIA,1,2024-01-03 10:45:00
+11,SBI_CARD,SBI Card Bill Payment,CREDIT_CARD,PAN_INDIA,1,2024-01-03 10:50:00
+12,LIC_INDIA,Life Insurance Corporation of India (LIC),INSURANCE,PAN_INDIA,1,2024-01-03 10:55:00

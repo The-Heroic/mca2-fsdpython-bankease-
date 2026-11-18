@@ -1,0 +1,5 @@
+role_id,role_code,role_name,description,created_at
+1,ADMIN,System Administrator,"Full system configuration, user role management, and compliance oversight",2024-01-01 09:00:00
+2,BANK_OFFICER,Bank Officer,"Branch operations, KYC verification, loan sanctioning, and ticket resolution",2024-01-01 09:05:00
+3,CUSTOMER,Retail / Corporate Customer,"Standard net banking access for accounts, transfers, bills, loans, and investments",2024-01-01 09:10:00
+4,AUDITOR,Compliance & Risk Auditor,"Read-only access to security audit trails, flagged transactions, and regulatory reports",2024-01-01 09:15:00

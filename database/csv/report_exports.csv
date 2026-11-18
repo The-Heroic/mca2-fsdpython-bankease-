@@ -1,0 +1,13 @@
+report_id,generated_by_user_id,report_type,file_format,period_start,period_end,filter_summary,file_path,generated_at
+1,5,ACCOUNT_STATEMENT,PDF,2024-04-01,2025-03-31,Account 180002000001 FY 2024-25 All Tx,/exports/stmt_acc1_fy2425.pdf,2025-04-05 10:15:00
+2,5,TAX_CERTIFICATE,PDF,2024-04-01,2025-03-31,FD TDS & Interest Certificate FY 2024-25,/exports/tax_user5_fy2425.pdf,2025-04-06 11:00:00
+3,6,ACCOUNT_STATEMENT,CSV,2025-01-01,2025-06-30,Account 180003000003 H1 2025,/exports/stmt_acc3_h1_2025.csv,2025-07-02 09:30:00
+4,7,LOAN_AMORTIZATION,PDF,2024-07-10,2044-07-10,Home Loan BNKLN202400003 240M Schedule,/exports/loan3_amortization.pdf,2025-01-18 15:00:00
+5,7,PORTFOLIO_SUMMARY,PDF,2024-04-01,2026-03-31,Consolidated FD & SGB Wealth Statement,/exports/portfolio_user7_2026.pdf,2026-04-02 18:20:00
+6,8,ACCOUNT_STATEMENT,XLSX,2025-04-01,2026-03-31,Pune Savings Account Annual Ledger,/exports/stmt_acc7_fy2526.xlsx,2026-04-10 14:10:00
+7,9,ACCOUNT_STATEMENT,PDF,2025-04-01,2026-03-31,Current Account 180010000008 GST Audit Ledger,/exports/stmt_acc8_fy2526.pdf,2026-04-15 16:45:00
+8,10,LOAN_AMORTIZATION,PDF,2024-10-04,2029-10-04,Education Loan Repayment Schedule,/exports/loan6_schedule.pdf,2025-07-03 11:20:00
+9,2,BRANCH_LIQUIDITY,XLSX,2026-01-01,2026-09-30,Noida Sector 62 Branch CASA & Loan Book,/exports/branch2_liquidity_q3_2026.xlsx,2026-10-01 17:00:00
+10,3,BRANCH_LIQUIDITY,PDF,2026-01-01,2026-09-30,Ghaziabad Crossing Republik Branch Summary,/exports/branch3_liquidity_q3_2026.pdf,2026-10-02 17:30:00
+11,1,COMPLIANCE_AUDIT,CSV,2026-01-01,2026-10-31,Flagged High-Value RTGS & Locked Accounts Audit,/exports/admin_compliance_oct2026.csv,2026-11-01 10:00:00
+12,4,COMPLIANCE_AUDIT,PDF,2024-01-01,2026-10-31,RBI Statutory Concurrent Audit Report,/exports/auditor_statutory_2026.pdf,2026-11-05 15:00:00

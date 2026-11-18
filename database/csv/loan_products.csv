@@ -1,0 +1,11 @@
+loan_product_id,product_code,product_name,loan_category,min_amount,max_amount,base_interest_rate,min_tenure_months,max_tenure_months,processing_fee_pct,is_active,created_at
+1,LN_PERS_EXP,BankEase Express Personal Loan,PERSONAL,50000.00,2500000.00,10.75,12,60,1.50,1,2024-01-04 09:00:00
+2,LN_PERS_SAL,Pre-Approved Salary Overdraft Loan,PERSONAL,25000.00,1000000.00,10.25,6,48,1.00,1,2024-01-04 09:10:00
+3,LN_HOME_PRM,Griha Suvidha Prime Home Loan,HOME,1000000.00,50000000.00,8.50,60,360,0.50,1,2024-01-04 09:20:00
+4,LN_HOME_TOP,Home Renovation & Top-Up Loan,HOME,200000.00,5000000.00,8.90,24,180,0.75,1,2024-01-04 09:30:00
+5,LN_AUTO_NEW,BankEase Drive New Car Loan,VEHICLE,300000.00,10000000.00,8.85,12,84,0.50,1,2024-01-04 09:40:00
+6,LN_AUTO_EV,Green Mobility Electric Vehicle Loan,VEHICLE,100000.00,5000000.00,8.40,12,84,0.25,1,2024-01-04 09:50:00
+7,LN_EDU_IND,Vidya Shiksha Premier India Education Loan,EDUCATION,100000.00,4000000.00,8.15,24,180,0.00,1,2024-01-04 10:00:00
+8,LN_EDU_ABR,Global Scholar Overseas Education Loan,EDUCATION,1000000.00,15000000.00,9.25,36,180,1.00,1,2024-01-04 10:10:00
+9,LN_BIZ_MSME,Udyog MSME Working Capital Term Loan,BUSINESS,500000.00,25000000.00,11.20,12,120,1.25,1,2024-01-04 10:20:00
+10,LN_GOLD_INS,Swarna Instant Gold Loan,GOLD,25000.00,2000000.00,9.00,6,36,0.50,1,2024-01-04 10:30:00

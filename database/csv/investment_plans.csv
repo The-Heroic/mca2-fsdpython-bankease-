@@ -1,0 +1,11 @@
+plan_id,plan_code,plan_name,investment_type,min_investment,expected_return_rate,lock_in_months,premature_penalty_pct,risk_level,is_active,created_at
+1,FD_REG_1YR,BankEase Regular Fixed Deposit - 1 Year,FIXED_DEPOSIT,10000.00,6.80,12,1.00,LOW,1,2024-01-04 11:00:00
+2,FD_MAX_3YR,BankEase WealthMax Fixed Deposit - 3 Years,FIXED_DEPOSIT,25000.00,7.25,36,1.00,LOW,1,2024-01-04 11:05:00
+3,FD_TAX_5YR,Section 80C Tax Saver Fixed Deposit - 5 Years,FIXED_DEPOSIT,10000.00,7.10,60,0.00,LOW,1,2024-01-04 11:10:00
+4,FD_SNR_2YR,Senior Citizen Samman FD - 2 Years,FIXED_DEPOSIT,10000.00,7.75,24,0.50,LOW,1,2024-01-04 11:15:00
+5,RD_FLEX_1YR,Smart Goal Recurring Deposit - 12 Months,RECURRING_DEPOSIT,1000.00,6.70,12,1.00,LOW,1,2024-01-04 11:20:00
+6,RD_PLUS_3YR,Sankalp Systematic Recurring Deposit - 36 Months,RECURRING_DEPOSIT,2000.00,7.00,36,1.00,LOW,1,2024-01-04 11:25:00
+7,MF_NIFTY_50,BankEase Nifty 50 Index Direct Growth Fund,MUTUAL_FUND,5000.00,12.40,0,0.00,HIGH,1,2024-01-04 11:30:00
+8,MF_BAL_ADV,BankEase Balanced Advantage Hybrid Fund,MUTUAL_FUND,5000.00,10.50,12,1.00,MODERATE,1,2024-01-04 11:35:00
+9,SGB_2024_I,RBI Sovereign Gold Bond Series,SOVEREIGN_GOLD_BOND,6000.00,2.50,96,0.00,MODERATE,1,2024-01-04 11:40:00
+10,PPF_GOV_15Y,Public Provident Fund (PPF) Scheme,PPF,500.00,7.10,180,1.00,LOW,1,2024-01-04 11:45:00
