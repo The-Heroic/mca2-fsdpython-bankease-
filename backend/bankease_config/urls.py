@@ -6,4 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/health/', HealthCheckView.as_view(), name='health-check'),
     path('api/v1/auth/', include('apps.accounts_auth.urls')),
+    path('api/v1/accounts/', include('apps.banking_accounts.urls')),
+    path('api/v1/transfers/', include('apps.transfers.urls')),
 ]

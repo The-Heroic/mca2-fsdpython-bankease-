@@ -1,0 +1,7 @@
+from django.apps import AppConfig
+
+
+class BankingAccountsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'apps.banking_accounts'
+    verbose_name = 'Bank Accounts Management'

@@ -1,10 +1,27 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.exceptions import TokenError
 
-from .serializers import LoginSerializer, RegisterSerializer, UserProfileSerializer
+from .models import Branch, User
+from .serializers import (
+    BranchSerializer,
+    ChangePasswordSerializer,
+    LoginSerializer,
+    RegisterSerializer,
+    UserProfileSerializer,
+)
+
+
+class IsBankOfficerOrAdmin(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return bool(
+            request.user
+            and request.user.is_authenticated
+            and request.user.role.role_code in ('ADMIN', 'BANK_OFFICER')
+        )
 
 
 class HealthCheckView(APIView):
@@ -15,7 +32,7 @@ class HealthCheckView(APIView):
             {
                 'status': 'ok',
                 'service': 'BankEase API',
-                'version': 'v0.1.0',
+                'version': 'v0.2.0',
             },
             status=status.HTTP_200_OK,
         )
@@ -51,6 +68,40 @@ class ProfileView(APIView):
 
     def get(self, request):
         return Response(UserProfileSerializer(request.user).data, status=status.HTTP_200_OK)
+
+
+class ChangePasswordView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        serializer = ChangePasswordSerializer(data=request.data, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        request.user.set_password(serializer.validated_data['new_password'])
+        request.user.save(update_fields=['password'])
+        return Response({'message': 'Password updated successfully.'}, status=status.HTTP_200_OK)
+
+
+class BranchListView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        branches = Branch.objects.all()
+        return Response(BranchSerializer(branches, many=True).data, status=status.HTTP_200_OK)
+
+
+class UnlockUserView(APIView):
+    permission_classes = [IsBankOfficerOrAdmin]
+
+    def post(self, request, user_id):
+        target = get_object_or_404(User, user_id=user_id)
+        target.is_locked = False
+        target.is_active = True
+        target.failed_login_attempts = 0
+        target.save(update_fields=['is_locked', 'is_active', 'failed_login_attempts'])
+        return Response(
+            {'message': f'User {target.username} unlocked.', 'user': UserProfileSerializer(target).data},
+            status=status.HTTP_200_OK,
+        )
 
 
 class LogoutView(APIView):
