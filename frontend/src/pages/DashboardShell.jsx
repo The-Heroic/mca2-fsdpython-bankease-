@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import apiClient from '../api/client'
 import AccountsSection from './AccountsSection'
 import TransfersSection from './TransfersSection'
+import BillsSection from './BillsSection'
+import LoansSection from './LoansSection'
+import InvestmentsSection from './InvestmentsSection'
 import ProfileSecuritySection from './ProfileSecuritySection'
 
 const MODULES = [
   { id: 1, name: 'User Authentication', sprint: 'Sprint 0 / 1', status: 'Active' },
   { id: 2, name: 'Account Management', sprint: 'Sprint 1', status: 'Active' },
   { id: 3, name: 'Funds Transfer', sprint: 'Sprint 1', status: 'Active' },
-  { id: 4, name: 'Bill Payment', sprint: 'Sprint 2', status: 'Planned' },
-  { id: 5, name: 'Loan Management', sprint: 'Sprint 2', status: 'Planned' },
-  { id: 6, name: 'Investment Services', sprint: 'Sprint 2', status: 'Planned' },
+  { id: 4, name: 'Bill Payment', sprint: 'Sprint 2', status: 'Active' },
+  { id: 5, name: 'Loan Management', sprint: 'Sprint 2', status: 'Active' },
+  { id: 6, name: 'Investment Services', sprint: 'Sprint 2', status: 'Active' },
   { id: 7, name: 'Customer Support', sprint: 'Sprint 3', status: 'Planned' },
   { id: 8, name: 'Security & Compliance', sprint: 'Sprint 3', status: 'Planned' },
   { id: 9, name: 'Notification & Alerts', sprint: 'Sprint 3', status: 'Planned' },
@@ -55,13 +58,13 @@ export default function DashboardShell({ user, onLogout }) {
 
       <div className="bg-white border-bottom">
         <div className="container">
-          <ul className="nav nav-pills py-2 gap-2">
+          <ul className="nav nav-pills py-2 gap-2 flex-wrap">
             <li className="nav-item">
               <button
                 className={`nav-link btn-sm ${activeTab === 'accounts' ? 'active' : ''}`}
                 onClick={() => setActiveTab('accounts')}
               >
-                Accounts &amp; Statements
+                Accounts
               </button>
             </li>
             <li className="nav-item">
@@ -69,7 +72,31 @@ export default function DashboardShell({ user, onLogout }) {
                 className={`nav-link btn-sm ${activeTab === 'transfers' ? 'active' : ''}`}
                 onClick={() => setActiveTab('transfers')}
               >
-                Funds Transfer
+                Transfers
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'bills' ? 'active' : ''}`}
+                onClick={() => setActiveTab('bills')}
+              >
+                Bill Pay
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'loans' ? 'active' : ''}`}
+                onClick={() => setActiveTab('loans')}
+              >
+                Loans
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'investments' ? 'active' : ''}`}
+                onClick={() => setActiveTab('investments')}
+              >
+                Investments
               </button>
             </li>
             <li className="nav-item">
@@ -77,7 +104,7 @@ export default function DashboardShell({ user, onLogout }) {
                 className={`nav-link btn-sm ${activeTab === 'profile' ? 'active' : ''}`}
                 onClick={() => setActiveTab('profile')}
               >
-                Profile &amp; Security
+                Profile
               </button>
             </li>
             <li className="nav-item">
@@ -85,7 +112,7 @@ export default function DashboardShell({ user, onLogout }) {
                 className={`nav-link btn-sm ${activeTab === 'roadmap' ? 'active' : ''}`}
                 onClick={() => setActiveTab('roadmap')}
               >
-                Module Roadmap
+                Roadmap
               </button>
             </li>
           </ul>
@@ -95,6 +122,9 @@ export default function DashboardShell({ user, onLogout }) {
       <main className="container py-4 flex-grow-1">
         {activeTab === 'accounts' && <AccountsSection user={user} />}
         {activeTab === 'transfers' && <TransfersSection />}
+        {activeTab === 'bills' && <BillsSection />}
+        {activeTab === 'loans' && <LoansSection user={user} />}
+        {activeTab === 'investments' && <InvestmentsSection />}
         {activeTab === 'profile' && <ProfileSecuritySection user={user} />}
         {activeTab === 'roadmap' && (
           <div className="row g-3">
