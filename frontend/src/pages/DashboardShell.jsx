@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import apiClient from '../api/client'
+import AccountsSection from './AccountsSection'
+import TransfersSection from './TransfersSection'
+import ProfileSecuritySection from './ProfileSecuritySection'
 
 const MODULES = [
   { id: 1, name: 'User Authentication', sprint: 'Sprint 0 / 1', status: 'Active' },
-  { id: 2, name: 'Account Management', sprint: 'Sprint 1', status: 'Planned' },
-  { id: 3, name: 'Funds Transfer', sprint: 'Sprint 1', status: 'Planned' },
+  { id: 2, name: 'Account Management', sprint: 'Sprint 1', status: 'Active' },
+  { id: 3, name: 'Funds Transfer', sprint: 'Sprint 1', status: 'Active' },
   { id: 4, name: 'Bill Payment', sprint: 'Sprint 2', status: 'Planned' },
   { id: 5, name: 'Loan Management', sprint: 'Sprint 2', status: 'Planned' },
   { id: 6, name: 'Investment Services', sprint: 'Sprint 2', status: 'Planned' },
@@ -15,6 +18,8 @@ const MODULES = [
 ]
 
 export default function DashboardShell({ user, onLogout }) {
+  const [activeTab, setActiveTab] = useState('accounts')
+
   const handleLogout = async () => {
     const refresh = localStorage.getItem('bankease_refresh_token')
     try {
@@ -48,53 +53,77 @@ export default function DashboardShell({ user, onLogout }) {
         </div>
       </nav>
 
-      <main className="container py-4 flex-grow-1">
-        <div className="card border-0 shadow-sm rounded-4 mb-4">
-          <div className="card-body p-4">
-            <div className="d-flex flex-wrap justify-content-between align-items-center gap-2">
-              <div>
-                <h4 className="fw-bold mb-1">Welcome, {user.full_name}</h4>
-                <p className="text-muted mb-0 small">
-                  Role: <strong>{user.role_name}</strong> &bull; KYC Status:{' '}
-                  <span className="badge bg-info text-dark">{user.kyc_status}</span>
-                </p>
-              </div>
-              <span className="badge bg-success-subtle text-success border border-success-subtle px-3 py-2">
-                Sprint 0 Skeleton (v0.1.0)
-              </span>
-            </div>
-          </div>
+      <div className="bg-white border-bottom">
+        <div className="container">
+          <ul className="nav nav-pills py-2 gap-2">
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'accounts' ? 'active' : ''}`}
+                onClick={() => setActiveTab('accounts')}
+              >
+                Accounts &amp; Statements
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'transfers' ? 'active' : ''}`}
+                onClick={() => setActiveTab('transfers')}
+              >
+                Funds Transfer
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'profile' ? 'active' : ''}`}
+                onClick={() => setActiveTab('profile')}
+              >
+                Profile &amp; Security
+              </button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link btn-sm ${activeTab === 'roadmap' ? 'active' : ''}`}
+                onClick={() => setActiveTab('roadmap')}
+              >
+                Module Roadmap
+              </button>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <h6 className="text-uppercase text-muted fw-bold small mb-3">
-          BankEase 10-Module Roadmap
-        </h6>
-        <div className="row g-3">
-          {MODULES.map((mod) => (
-            <div className="col-md-6 col-lg-4" key={mod.id}>
-              <div className="card h-100 border-0 shadow-sm rounded-3 module-card">
-                <div className="card-body">
-                  <div className="d-flex justify-content-between align-items-start mb-2">
-                    <span className="badge bg-primary-subtle text-primary">
-                      Module {mod.id}
-                    </span>
-                    <span
-                      className={`badge ${
-                        mod.status === 'Active'
-                          ? 'bg-success'
-                          : 'bg-secondary-subtle text-secondary'
-                      }`}
-                    >
-                      {mod.status}
-                    </span>
+      <main className="container py-4 flex-grow-1">
+        {activeTab === 'accounts' && <AccountsSection user={user} />}
+        {activeTab === 'transfers' && <TransfersSection />}
+        {activeTab === 'profile' && <ProfileSecuritySection user={user} />}
+        {activeTab === 'roadmap' && (
+          <div className="row g-3">
+            {MODULES.map((mod) => (
+              <div className="col-md-6 col-lg-4" key={mod.id}>
+                <div className="card h-100 border-0 shadow-sm rounded-3 module-card">
+                  <div className="card-body">
+                    <div className="d-flex justify-content-between align-items-start mb-2">
+                      <span className="badge bg-primary-subtle text-primary">
+                        Module {mod.id}
+                      </span>
+                      <span
+                        className={`badge ${
+                          mod.status === 'Active'
+                            ? 'bg-success'
+                            : 'bg-secondary-subtle text-secondary'
+                        }`}
+                      >
+                        {mod.status}
+                      </span>
+                    </div>
+                    <h6 className="fw-bold mb-1">{mod.name}</h6>
+                    <div className="text-muted small">Scheduled: {mod.sprint}</div>
                   </div>
-                  <h6 className="fw-bold mb-1">{mod.name}</h6>
-                  <div className="text-muted small">Scheduled: {mod.sprint}</div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </main>
     </div>
   )

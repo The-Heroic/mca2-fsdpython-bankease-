@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'corsheaders',
     # BankEase Core Modules
     'apps.accounts_auth',
+    'apps.banking_accounts',
+    'apps.transfers',
 ]
 
 MIDDLEWARE = [
