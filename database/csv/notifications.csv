@@ -1,0 +1,61 @@
+notification_id,user_id,notification_type,priority,title,message,channel,is_read,read_at,created_at
+1,5,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#1),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,1,2024-05-14 14:00:00,2024-05-14 10:00:00
+2,6,TRANSACTION,NORMAL,Inward Credit Received (#2),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,1,2024-05-27 15:00:00,2024-05-27 11:00:00
+3,7,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#3),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,1,2024-06-09 16:00:00,2024-06-09 12:00:00
+4,8,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#4),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,1,2024-06-22 17:00:00,2024-06-22 13:00:00
+5,9,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#5),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,1,2024-07-05 18:00:00,2024-07-05 14:00:00
+6,10,SECURITY,CRITICAL,New Device Login Detected (#6),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,1,2024-07-18 19:00:00,2024-07-18 15:00:00
+7,11,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#7),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,1,2024-07-31 20:00:00,2024-07-31 16:00:00
+8,12,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#8),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,1,2024-08-13 21:00:00,2024-08-13 17:00:00
+9,13,TRANSACTION,NORMAL,Inward Credit Received (#9),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,1,2024-08-26 22:00:00,2024-08-26 18:00:00
+10,14,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#10),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,1,2024-09-08 13:00:00,2024-09-08 09:00:00
+11,15,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#11),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,1,2024-09-21 14:00:00,2024-09-21 10:00:00
+12,5,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#12),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,1,2024-10-04 15:00:00,2024-10-04 11:00:00
+13,6,SECURITY,CRITICAL,New Device Login Detected (#13),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,1,2024-10-17 16:00:00,2024-10-17 12:00:00
+14,7,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#14),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,1,2024-10-30 17:00:00,2024-10-30 13:00:00
+15,8,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#15),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,1,2024-11-12 18:00:00,2024-11-12 14:00:00
+16,9,TRANSACTION,NORMAL,Inward Credit Received (#16),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,1,2024-11-25 19:00:00,2024-11-25 15:00:00
+17,10,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#17),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,1,2024-12-08 20:00:00,2024-12-08 16:00:00
+18,11,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#18),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,1,2024-12-21 21:00:00,2024-12-21 17:00:00
+19,12,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#19),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,1,2025-01-03 22:00:00,2025-01-03 18:00:00
+20,13,SECURITY,CRITICAL,New Device Login Detected (#20),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,1,2025-01-16 13:00:00,2025-01-16 09:00:00
+21,14,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#21),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,1,2025-01-29 14:00:00,2025-01-29 10:00:00
+22,15,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#22),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,1,2025-02-11 15:00:00,2025-02-11 11:00:00
+23,5,TRANSACTION,NORMAL,Inward Credit Received (#23),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,1,2025-02-24 16:00:00,2025-02-24 12:00:00
+24,6,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#24),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,1,2025-03-09 17:00:00,2025-03-09 13:00:00
+25,7,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#25),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,1,2025-03-22 18:00:00,2025-03-22 14:00:00
+26,8,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#26),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,1,2025-04-04 19:00:00,2025-04-04 15:00:00
+27,9,SECURITY,CRITICAL,New Device Login Detected (#27),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,1,2025-04-17 20:00:00,2025-04-17 16:00:00
+28,10,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#28),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,1,2025-04-30 21:00:00,2025-04-30 17:00:00
+29,11,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#29),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,1,2025-05-13 22:00:00,2025-05-13 18:00:00
+30,12,TRANSACTION,NORMAL,Inward Credit Received (#30),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,1,2025-05-26 13:00:00,2025-05-26 09:00:00
+31,13,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#31),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,1,2025-06-08 14:00:00,2025-06-08 10:00:00
+32,14,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#32),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,1,2025-06-21 15:00:00,2025-06-21 11:00:00
+33,15,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#33),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,1,2025-07-04 16:00:00,2025-07-04 12:00:00
+34,5,SECURITY,CRITICAL,New Device Login Detected (#34),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,1,2025-07-17 17:00:00,2025-07-17 13:00:00
+35,6,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#35),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,1,2025-07-30 18:00:00,2025-07-30 14:00:00
+36,7,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#36),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,1,2025-08-12 19:00:00,2025-08-12 15:00:00
+37,8,TRANSACTION,NORMAL,Inward Credit Received (#37),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,1,2025-08-25 20:00:00,2025-08-25 16:00:00
+38,9,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#38),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,1,2025-09-07 21:00:00,2025-09-07 17:00:00
+39,10,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#39),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,1,2025-09-20 22:00:00,2025-09-20 18:00:00
+40,11,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#40),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,1,2025-10-03 13:00:00,2025-10-03 09:00:00
+41,12,SECURITY,CRITICAL,New Device Login Detected (#41),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,1,2025-10-16 14:00:00,2025-10-16 10:00:00
+42,13,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#42),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,1,2025-10-29 15:00:00,2025-10-29 11:00:00
+43,14,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#43),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,0,,2025-11-11 12:00:00
+44,15,TRANSACTION,NORMAL,Inward Credit Received (#44),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,0,,2025-11-24 13:00:00
+45,5,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#45),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,0,,2025-12-07 14:00:00
+46,6,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#46),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,0,,2025-12-20 15:00:00
+47,7,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#47),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,0,,2026-01-02 16:00:00
+48,8,SECURITY,CRITICAL,New Device Login Detected (#48),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,0,,2026-01-15 17:00:00
+49,9,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#49),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,0,,2026-01-28 18:00:00
+50,10,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#50),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,0,,2026-02-10 09:00:00
+51,11,TRANSACTION,NORMAL,Inward Credit Received (#51),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,0,,2026-02-23 10:00:00
+52,12,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#52),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,0,,2026-03-08 11:00:00
+53,13,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#53),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,0,,2026-03-21 12:00:00
+54,14,INVESTMENT_UPDATE,NORMAL,Quarterly FD Interest Credited (#54),Quarterly compounded interest has been accrued on your active Fixed Deposit portfolio.,IN_APP,0,,2026-04-03 13:00:00
+55,15,SECURITY,CRITICAL,New Device Login Detected (#55),Your BankEase profile was accessed from a new browser session. Contact support if unrecognized.,EMAIL,0,,2026-04-16 14:00:00
+56,5,SUPPORT_UPDATE,NORMAL,Bank Officer Replied to Your Support Ticket (#56),An update has been posted on your support ticket in the Customer Support portal.,IN_APP,0,,2026-04-29 15:00:00
+57,6,TRANSACTION,HIGH,Account Debited via IMPS/NEFT (#57),Your BankEase account was debited for an outward fund transfer. Check statement for UTR details.,IN_APP,0,,2026-05-12 16:00:00
+58,7,TRANSACTION,NORMAL,Inward Credit Received (#58),Funds have been credited to your BankEase account via NEFT/RTGS.,EMAIL,0,,2026-05-25 17:00:00
+59,8,BILL_REMINDER,NORMAL,Upcoming Utility Bill Due in 3 Days (#59),Your registered utility biller has an upcoming due date. Ensure sufficient balance for Auto-Pay.,IN_APP,0,,2026-06-07 18:00:00
+60,9,LOAN_ALERT,HIGH,Monthly Loan EMI Auto-Debit Confirmation (#60),Your monthly loan EMI installment has been processed successfully towards your active loan.,SMS,0,,2026-06-20 09:00:00

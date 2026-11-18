@@ -1,0 +1,29 @@
+message_id,ticket_id,sender_user_id,message_body,is_internal_note,created_at
+1,1,5,"Customer Inquiry (TKT20240001): Transferred INR 28,000 via IMPS to landlord Ramesh Agarwal but receipt took 10 minutes to reflect.",0,2024-04-20 11:00:00
+2,1,2,Bank Officer Response: Verified IMPS switch settlement; UTR confirmed credited to beneficiary bank.,0,2024-04-20 13:00:00
+3,2,6,"Customer Inquiry (TKT20240002): Paid Ghaziabad electricity bill of INR 4,944.50, amount debited failed at biller end.",0,2025-03-10 14:20:00
+4,2,3,Bank Officer Response: Auto-reversal initiated and credited back to savings account.,0,2025-03-10 16:20:00
+5,3,7,Customer Inquiry (TKT20240003): Need provisional home loan interest and principal certificate for Section 24 and 80C tax filing.,0,2025-01-18 09:45:00
+6,3,2,Bank Officer Response: Generated and shared provisional tax certificate in Reports module.,0,2025-01-18 11:45:00
+7,4,8,Customer Inquiry (TKT20250004): Please confirm maturity payout credit for FD BNKFD2024007.,0,2025-05-11 10:00:00
+8,4,3,Bank Officer Response: Maturity proceeds credited to Pune savings account.,0,2025-05-11 12:00:00
+9,5,9,Customer Inquiry (TKT20250005): Requesting daily RTGS limit increase from 20 Lakhs to 50 Lakhs for marble export settlements.,0,2025-06-14 12:30:00
+10,5,2,Bank Officer Response: Enhanced limit approved after verifying trade turnover.,0,2025-06-14 14:30:00
+11,6,10,Customer Inquiry (TKT20250006): Clarification requested on simple interest subsidy during MCA course period.,0,2025-07-02 15:00:00
+12,6,3,Bank Officer Response: Explained repayment schedule and CSIS interest breakdown.,0,2025-07-02 17:00:00
+13,7,11,Customer Inquiry (TKT20250007): My account is in PENDING_KYC state and I want to complete video KYC.,0,2026-09-12 10:15:00
+14,7,2,Bank Officer Response: Thank you for contacting BankEase Support. A Bank Officer is reviewing your request and verifying the ledger records.,0,2026-09-12 12:15:00
+15,8,12,Customer Inquiry (TKT20250008): My full legal name is 120 characters long and gets clipped on PDF export.,0,2026-09-15 11:00:00
+16,8,2,Bank Officer Response: Updated PDF statement template to wrap long multi-line customer names.,0,2026-09-15 13:00:00
+17,9,13,"Customer Inquiry (TKT20260009): Added my cousin Rohit Sharma as beneficiary, need urgent medical transfer.",0,2026-10-08 09:30:00
+18,9,3,Bank Officer Response: Thank you for contacting BankEase Support. A Bank Officer is reviewing your request and verifying the ledger records.,0,2026-10-08 11:30:00
+19,10,14,Customer Inquiry (TKT20260010): Branch desk confused my account with another Rohit Kumar Sharma in Lajpat Nagar.,0,2026-10-09 13:00:00
+20,10,3,Bank Officer Response: Added distinct customer ID & PAN verification note on branch profile.,0,2026-10-09 15:00:00
+21,11,15,"Customer Inquiry (TKT20260011): My account 180004000015 was frozen when transferring INR 49,999.",0,2026-08-21 09:00:00
+22,11,2,Bank Officer Response: Thank you for contacting BankEase Support. A Bank Officer is reviewing your request and verifying the ledger records.,0,2026-08-21 11:00:00
+23,12,5,"Customer Inquiry (TKT20260012): My RTGS transfer of INR 9,85,000 is showing FLAGGED status.",0,2026-10-18 16:00:00
+24,12,2,Bank Officer Response: Thank you for contacting BankEase Support. A Bank Officer is reviewing your request and verifying the ledger records.,0,2026-10-18 18:00:00
+25,13,6,Customer Inquiry (TKT20260013): Expense pie chart tooltips overlap on small 1366x768 screens.,0,2026-11-12 18:00:00
+26,13,2,Bank Officer Response: Thank you for contacting BankEase Support. A Bank Officer is reviewing your request and verifying the ledger records.,0,2026-11-12 20:00:00
+27,14,7,"Customer Inquiry (TKT20260014): Want to enable auto-pay up to INR 50,000 for my SBI Elite card.",0,2026-10-25 11:20:00
+28,14,3,Bank Officer Response: Updated customer biller configuration.,0,2026-10-25 13:20:00
