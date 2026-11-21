@@ -8,10 +8,11 @@ services:
   - type: web
     name: bankease-backend
     runtime: python
+    rootDir: backend
     region: oregon
     plan: free
-    buildCommand: cd backend && pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate && python seed_demo_data.py
-    startCommand: cd backend && gunicorn bankease_config.wsgi:application --bind 0.0.0.0:$PORT
+    buildCommand: ./build.sh
+    startCommand: gunicorn bankease_config.wsgi:application
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
