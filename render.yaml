@@ -11,7 +11,7 @@ services:
     rootDir: backend
     region: oregon
     plan: free
-    buildCommand: ./build.sh
+    buildCommand: bash ./build.sh
     startCommand: gunicorn bankease_config.wsgi:application
     envVars:
       - key: PYTHON_VERSION
