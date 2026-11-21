@@ -177,10 +177,13 @@ export default function TransfersSection() {
 
             {receipt && (
               <div className="alert alert-info mt-3 small mb-0">
-                <strong>UTR Receipt:</strong> <span className="font-monospace">{receipt.reference_utr}</span>
-                <br />
-                Amount: ₹{Number(receipt.amount).toLocaleString('en-IN')} | New Balance: ₹
-                {Number(receipt.balance_after).toLocaleString('en-IN')}
+                <div className="d-flex justify-content-between align-items-center mb-1">
+                  <strong>UTR Receipt:</strong>
+                  <span className="badge bg-primary font-monospace">{receipt.reference_utr}</span>
+                </div>
+                <div><strong>Timestamp:</strong> {receipt.transaction_date ? new Date(receipt.transaction_date).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }) : new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}</div>
+                <div>Amount: <strong>₹{Number(receipt.amount).toLocaleString('en-IN')}</strong> | Channel: <strong>{receipt.channel}</strong></div>
+                <div>New Available Balance: <strong>₹{Number(receipt.balance_after).toLocaleString('en-IN')}</strong></div>
               </div>
             )}
           </div>
@@ -262,6 +265,7 @@ export default function TransfersSection() {
               <table className="table table-hover table-sm small">
                 <thead className="table-light">
                   <tr>
+                    <th>Date &amp; Time</th>
                     <th>UTR</th>
                     <th>Account</th>
                     <th>Type</th>
@@ -274,13 +278,21 @@ export default function TransfersSection() {
                 <tbody>
                   {history.length === 0 ? (
                     <tr>
-                      <td colSpan={7} className="text-center text-muted py-3">
+                      <td colSpan={8} className="text-center text-muted py-3">
                         No transfers executed yet.
                       </td>
                     </tr>
                   ) : (
                     history.map((tx) => (
                       <tr key={tx.transaction_id}>
+                        <td className="text-muted text-nowrap">
+                          {tx.transaction_date
+                            ? new Date(tx.transaction_date).toLocaleString('en-IN', {
+                                dateStyle: 'medium',
+                                timeStyle: 'short',
+                              })
+                            : '—'}
+                        </td>
                         <td className="font-monospace">{tx.reference_utr}</td>
                         <td>{tx.account_number}</td>
                         <td>

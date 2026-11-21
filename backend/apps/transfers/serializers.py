@@ -89,13 +89,25 @@ class ExecuteTransferSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         user = self.context['request'].user
-        source = BankAccount.objects.filter(account_id=attrs['source_account_id'], user=user).first()
+        is_staff_or_officer = bool(
+            user.role and user.role.role_code in ('ADMIN', 'BANK_OFFICER')
+        )
+
+        if is_staff_or_officer:
+            source = BankAccount.objects.filter(account_id=attrs['source_account_id']).first()
+        else:
+            source = BankAccount.objects.filter(account_id=attrs['source_account_id'], user=user).first()
+
         if not source:
             raise serializers.ValidationError({'source_account_id': 'Source account not found for your profile.'})
         if source.account_status != 'ACTIVE':
             raise serializers.ValidationError({'source_account_id': f'Source account is {source.account_status}.'})
 
-        beneficiary = Beneficiary.objects.filter(beneficiary_id=attrs['beneficiary_id'], user=user).first()
+        if is_staff_or_officer:
+            beneficiary = Beneficiary.objects.filter(beneficiary_id=attrs['beneficiary_id']).first()
+        else:
+            beneficiary = Beneficiary.objects.filter(beneficiary_id=attrs['beneficiary_id'], user=user).first()
+
         if not beneficiary:
             raise serializers.ValidationError({'beneficiary_id': 'Beneficiary not found.'})
         if beneficiary.status != 'ACTIVE':

@@ -189,6 +189,7 @@ export default function AccountsSection({ user }) {
                 <table className="table table-sm small">
                   <thead className="table-light">
                     <tr>
+                      <th>Date &amp; Time</th>
                       <th>UTR</th>
                       <th>Type</th>
                       <th>Channel</th>
@@ -200,13 +201,21 @@ export default function AccountsSection({ user }) {
                   <tbody>
                     {selectedStatement.transactions.length === 0 ? (
                       <tr>
-                        <td colSpan={6} className="text-center text-muted py-3">
+                        <td colSpan={7} className="text-center text-muted py-3">
                           No transactions recorded yet.
                         </td>
                       </tr>
                     ) : (
                       selectedStatement.transactions.map((tx) => (
                         <tr key={tx.transaction_id}>
+                          <td className="text-muted text-nowrap">
+                            {tx.transaction_date
+                              ? new Date(tx.transaction_date).toLocaleString('en-IN', {
+                                  dateStyle: 'medium',
+                                  timeStyle: 'short',
+                                })
+                              : '—'}
+                          </td>
                           <td className="font-monospace">{tx.reference_utr}</td>
                           <td>
                             <span

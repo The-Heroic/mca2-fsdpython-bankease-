@@ -1,4 +1,5 @@
 from django.contrib.auth import password_validation
+from django.db.models import Q
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
@@ -86,9 +87,11 @@ class LoginSerializer(serializers.Serializer):
         username = attrs.get('username', '').strip()
         password = attrs.get('password', '')
 
-        try:
-            user_obj = User.objects.select_related('role', 'home_branch').get(username=username)
-        except User.DoesNotExist:
+        user_obj = User.objects.select_related('role', 'home_branch').filter(
+            Q(username__iexact=username) | Q(email__iexact=username)
+        ).first()
+
+        if not user_obj:
             raise serializers.ValidationError({'detail': 'Invalid username or password.'})
 
         if user_obj.is_locked or not user_obj.is_active:
@@ -96,20 +99,20 @@ class LoginSerializer(serializers.Serializer):
                 {'detail': 'Account is locked or inactive. Please contact BankEase support.'}
             )
 
-        user = authenticate(username=username, password=password)
-        if user is None:
+        if not user_obj.check_password(password):
             user_obj.failed_login_attempts += 1
             if user_obj.failed_login_attempts >= 3:
                 user_obj.is_locked = True
             user_obj.save(update_fields=['failed_login_attempts', 'is_locked'])
             raise serializers.ValidationError({'detail': 'Invalid username or password.'})
 
+        user = user_obj
         user.failed_login_attempts = 0
         user.last_login = timezone.now()
         user.save(update_fields=['failed_login_attempts', 'last_login'])
 
         refresh = RefreshToken.for_user(user)
-        refresh['role'] = user.role.role_code
+        refresh['role'] = user.role.role_code if user.role else 'CUSTOMER'
         refresh['username'] = user.username
 
         return {
