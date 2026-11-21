@@ -1,8 +1,14 @@
 from django.contrib import admin
 from django.urls import include, path
+from django.http import JsonResponse
 from apps.accounts_auth.views import HealthCheckView
 
+def root_health_view(request):
+    return JsonResponse({'status': 'ok', 'app': 'BankEase REST API', 'version': '1.0.0'})
+
 urlpatterns = [
+    path('', root_health_view, name='root-health'),
+    path('health/', root_health_view, name='health-alt'),
     path('admin/', admin.site.urls),
     path('api/v1/health/', HealthCheckView.as_view(), name='health-check'),
     path('api/v1/auth/', include('apps.accounts_auth.urls')),
