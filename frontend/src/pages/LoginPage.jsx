@@ -50,8 +50,10 @@ export default function LoginPage({ onLoginSuccess }) {
         const firstKey = Object.keys(data)[0]
         const firstVal = Array.isArray(data[firstKey]) ? data[firstKey][0] : data[firstKey]
         setError(`${firstKey}: ${firstVal}`)
+      } else if (err.message) {
+        setError(`Unable to connect to backend (${apiClient.defaults.baseURL}): ${err.message}`)
       } else {
-        setError('Unable to reach BankEase API server. Ensure Django is running on port 8000.')
+        setError('Unable to reach BankEase API server. Ensure backend is running.')
       }
     } finally {
       setLoading(false)

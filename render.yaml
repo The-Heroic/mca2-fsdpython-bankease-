@@ -42,4 +42,4 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_BASE_URL
-        value: https://bankease-backend-6cl1.onrender.com/api/v1
+        value: https://bankease-backend-6c11.onrender.com/api/v1
